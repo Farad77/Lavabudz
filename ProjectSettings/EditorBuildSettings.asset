@@ -14,7 +14,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Unity_MetaBalls_Liquids/MetaBalls.unity
     guid: 550a9e29acc3df746b22f70540971d1c
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Environnement.unity
     guid: db7822dba96394442b78deffe2f38987
   m_configObjects:
