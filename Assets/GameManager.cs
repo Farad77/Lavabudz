@@ -48,8 +48,8 @@ public class GameManager : MonoBehaviour
     public void KillBuddy(Buddy target)
     {
         lastingBuddies.Remove(target);
-        target.removeMembres();
-        Destroy(target.gameObject);
+        target.Kill();
+        
 
         UpdateBuddyCount();
     }
