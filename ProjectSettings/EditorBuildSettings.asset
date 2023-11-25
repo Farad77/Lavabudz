@@ -5,9 +5,12 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/main.unity
     guid: 9ee404038d8c0a14bb3dc31fc4c49532
+  - enabled: 1
+    path: Assets/Scenes/Buddy.unity
+    guid: 7e52315aa057d24408adedf895fb10ed
   - enabled: 0
     path: Assets/Unity_MetaBalls_Liquids/MetaBalls.unity
     guid: 550a9e29acc3df746b22f70540971d1c
