@@ -16,6 +16,7 @@ public class AllTheChildrenAreBelongToDie : MonoBehaviour
     {
         foreach(GameObject enfant in enfants)
         {
+            enfant.SetActive(true);
             enfant.transform.parent = null;
 
         }
