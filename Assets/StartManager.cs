@@ -11,7 +11,7 @@ public class StartManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        StartCoroutine(LaunchGameDelay());
     }
 
     // Update is called once per frame
@@ -19,13 +19,19 @@ public class StartManager : MonoBehaviour
     {
         
     }
+    IEnumerator LaunchGameDelay()
+    {
+
+        yield return new WaitForSeconds(10f);
+        LaunchGame();
+    }
 
 
     [ContextMenu("Launch Game")]
     public void LaunchGame() //by pressing start Button
     {
         HideStartElements();
-        GameManager.Instance.Init(tablePlacer.transform.position.y);
+        GameManager.Instance.Init(tablePlacer.transform.position);
     }
 
     private void HideStartElements()
