@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -13,6 +15,10 @@ public class GameManager : MonoBehaviour
     public bool init; 
 
     public GameObject levelGO;
+
+    public GameObject gameOverCanvasGO;
+
+    public TextMeshProUGUI gameOverTxt;
 
  
 
@@ -31,9 +37,14 @@ public class GameManager : MonoBehaviour
     public void Init(Vector3 position) //init by StartManager
     {
         init = true;
-        levelGO.transform.position = new Vector3(position.x+levelGO.transform.localScale.x/2, position.y, position.z+levelGO.transform.position.z/2); //place TABLE
-        levelGO.SetActive(true); //show LEVEL
-        levelGO.GetComponent<AllTheChildrenAreBelongToDie>().generationDeenfanter();
+
+        if (levelGO)
+        {
+            levelGO.transform.position = new Vector3(position.x + levelGO.transform.localScale.x / 2, position.y, position.z + levelGO.transform.position.z / 2); //place TABLE
+            levelGO.SetActive(true); //show LEVEL
+            levelGO.GetComponent<AllTheChildrenAreBelongToDie>().generationDeenfanter();
+        }
+       
         lastingBuddies.AddRange(FindObjectsByType<Buddy>(FindObjectsSortMode.None)); //REF & COUNT BUDDIES
         UpdateBuddyCount();
     }
@@ -41,7 +52,9 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        levelGO.SetActive(false); //hide terrain for startManager
+        if (levelGO)  levelGO.SetActive(false); //hide terrain for startManager
+
+        gameOverCanvasGO.SetActive(false);
     }
 
 
@@ -68,13 +81,40 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("Game is over");
         gameOver = true;
+        gameOverTxt.text = "Game Over !";
+        Reload();
 
     }
 
     public void Win()
     {
+        gameOverTxt.text = "Victory !";
+        Reload();
         //win
         Debug.Log("Victory !");
+    }
+
+    void Reload()
+    {
+        gameOverCanvasGO.SetActive(true);
+        StartCoroutine(Reloading());
+    }
+
+    IEnumerator Reloading()
+    {
+        yield return new WaitForSeconds(5);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    [ContextMenu("Kill all")]
+    public void KillAllBuddies()
+    {
+       // lastingBuddies.AddRange(FindObjectsByType<Buddy>(FindObjectsSortMode.None)); //REF & COUNT BUDDIES
+
+        for (int i = 0; i < lastingBuddies.Count; i++)
+        {
+            KillBuddy(lastingBuddies[i]);
+        }
     }
 
 }

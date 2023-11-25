@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Buddy
   - Sol
+  - Floor
   layers:
   - Default
   - TransparentFX
