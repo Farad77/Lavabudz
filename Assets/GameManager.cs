@@ -48,8 +48,8 @@ public class GameManager : MonoBehaviour
     public void KillBuddy(Buddy target)
     {
         lastingBuddies.Remove(target);
-        target.removeMembres();
-        Destroy(target.gameObject);
+        target.Kill();
+        
 
         UpdateBuddyCount();
     }
@@ -68,6 +68,7 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("Game is over");
         gameOver = true;
+
     }
 
     public void Win()

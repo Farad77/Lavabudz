@@ -9,6 +9,7 @@ public class Buddy : MonoBehaviour
     public SpriteRenderer rend;
     public GameObject[] membres;
     Animator anim;
+    public GameObject poufSFX;
 
     private void Start()
     {
@@ -44,5 +45,21 @@ public class Buddy : MonoBehaviour
         {
             RandomBodies();
         }*/
+    }
+
+    public void Kill()
+    {
+        
+        StartCoroutine(Killing());
+    }
+
+    IEnumerator Killing()
+    {
+        anim.SetTrigger("Dead");
+        yield return new WaitForSeconds(1);
+        poufSFX.SetActive(true);
+        removeMembres();
+        yield return new WaitForSeconds(1);
+        Destroy(gameObject);
     }
 }
