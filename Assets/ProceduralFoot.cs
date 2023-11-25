@@ -21,19 +21,29 @@ public class ProceduralFoot : MonoBehaviour
         xDist = targetHip.transform.position.x - transform.position.x;
         zDist = targetHip.transform.position.z - transform.position.z;
 
-        if (xDist >= threshold || xDist <= -threshold)
+        if (xDist >= threshold)
         {
-            Move();
+            Move(1f,0f);
+        }
+        else if (xDist <= -threshold)
+        {
+            Move(-1f,0f);
         }
 
-        if (zDist >= threshold || zDist <= -threshold)
+        if (zDist >= threshold)
         {
-            Move();
+            Move(0f,1f);
+        }
+        else if (zDist <= -threshold)
+        {
+            Move(0f,-1f);
         }
     }
 
-    void Move()
+ 
+
+    void Move(float x, float z)
     {
-        transform.position = new Vector3(targetHip.transform.position.x, transform.position.y, targetHip.transform.position.z);
+        transform.position = new Vector3(targetHip.transform.position.x + x/17, transform.position.y, targetHip.transform.position.z + z / 17);
     }
 }

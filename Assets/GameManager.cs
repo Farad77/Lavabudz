@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -68,13 +69,27 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("Game is over");
         gameOver = true;
+        Reload();
 
     }
 
     public void Win()
     {
+
+        Reload();
         //win
         Debug.Log("Victory !");
+    }
+
+    void Reload()
+    {
+        StartCoroutine(Reloading());
+    }
+
+    IEnumerator Reloading()
+    {
+        yield return new WaitForSeconds(3);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
 }
