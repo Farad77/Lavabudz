@@ -877,6 +877,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Buddy
       objectReference: {fileID: 0}
+    - target: {fileID: 7508740490292613099, guid: 29eb3de0684589c4b8c46dff2e911d0d, type: 3}
+      propertyPath: m_Constraints
+      value: 80
+      objectReference: {fileID: 0}
     - target: {fileID: 8466014983458025436, guid: 29eb3de0684589c4b8c46dff2e911d0d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.542
