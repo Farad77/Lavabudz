@@ -10,9 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 757328192332287217}
   - component: {fileID: 8346168967003834538}
-  - component: {fileID: 4554353245499502198}
-  - component: {fileID: 8969657917963830567}
-  - component: {fileID: 8658668200290259767}
   - component: {fileID: 7715954054980012845}
   - component: {fileID: 3524225217915941160}
   - component: {fileID: 1232824722309854816}
@@ -35,7 +32,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.05261481, z: 0, w: 0.9986149}
   m_LocalPosition: {x: 0, y: 7.75, z: 10.7}
-  m_LocalScale: {x: 18.814835, y: 0.5, z: 0.75245}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5295174798327602916}
@@ -56,77 +53,6 @@ MonoBehaviour:
   blockId: 803f3803-bb5e-464a-ac45-dad44c840fb6
   instanceId: 849d3a95-c035-425b-ac02-485dfa74a749
   version: 1
---- !u!33 &4554353245499502198
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7727129681677679640}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &8969657917963830567
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7727129681677679640}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 0a6b2b4f865c28948858806bef42457c, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &8658668200290259767
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7727129681677679640}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &7715954054980012845
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -263,15 +189,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9136100237114236936, guid: d152d6b205a65b043ae468ac2199a849, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.173
+      value: 4.27
       objectReference: {fileID: 0}
     - target: {fileID: 9136100237114236936, guid: d152d6b205a65b043ae468ac2199a849, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.247
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9136100237114236936, guid: d152d6b205a65b043ae468ac2199a849, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.616
+      value: -3.65
       objectReference: {fileID: 0}
     - target: {fileID: 9136100237114236936, guid: d152d6b205a65b043ae468ac2199a849, type: 3}
       propertyPath: m_LocalRotation.w
@@ -301,7 +227,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4954526536938666256, guid: d152d6b205a65b043ae468ac2199a849, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

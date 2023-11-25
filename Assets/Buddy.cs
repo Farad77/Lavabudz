@@ -7,6 +7,7 @@ public class Buddy : MonoBehaviour
 {
     public Sprite[] bodies;
     public SpriteRenderer rend;
+    public GameObject[] membres;
     Animator anim;
 
     private void Start()
@@ -16,6 +17,13 @@ public class Buddy : MonoBehaviour
         anim.enabled = false;
         StartCoroutine(startAnim());
         
+    }
+    public void removeMembres()
+    {
+        foreach(GameObject go in membres)
+        {
+            DestroyImmediate(go);
+        }
     }
     IEnumerator startAnim()
     {
