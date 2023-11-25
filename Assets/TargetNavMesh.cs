@@ -20,14 +20,18 @@ public class TargetNavMesh : MonoBehaviour
     void Update()
     {
         if (target == null) return;
-        if (target != null&&Vector3.Distance(target.position,this.transform.position)<=3)
+        if (target != null&&Vector3.Distance(target.position,this.transform.position)<=6)
         {
             nav.SetDestination(target.position);
         }
-        else
+        if (target != null && Vector3.Distance(target.position, this.transform.position) > 8 || Vector3.Distance(target.position, this.transform.position) <=2)
         {
             nav.isStopped = true;
         }
+        /* else
+         {
+             nav.isStopped = true;
+         }*/
 
     }
 }
