@@ -24,7 +24,8 @@ public class TargetNavMesh : MonoBehaviour
         {
             nav.SetDestination(target.position);
         }
-        if (target != null && Vector3.Distance(target.position, this.transform.position) > 8 || Vector3.Distance(target.position, this.transform.position) <=2)
+        if (target != null && Vector3.Distance(target.position, this.transform.position) > 8)
+            //|| Vector3.Distance(target.position, this.transform.position) <=2)
         {
             nav.isStopped = true;
         }
