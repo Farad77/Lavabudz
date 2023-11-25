@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Buddy
+  - Sol
   layers:
   - Default
   - TransparentFX
@@ -14,7 +15,7 @@ TagManager:
   - UI
   - decor
   - buddy
-  - 
+  - ground
   - 
   - 
   - 

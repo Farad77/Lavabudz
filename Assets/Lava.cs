@@ -19,10 +19,10 @@ public class Lava : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log("Lava detected smth");
-        if(other.gameObject.GetComponent<Buddy>() != null)
+        if(other.gameObject.GetComponentInChildren<Buddy>() != null)
         {
             Debug.Log("Lava detected buddy, Kill Buddy");
-            GameManager.Instance.KillBuddy(other.gameObject.GetComponent<Buddy>());
+            GameManager.Instance.KillBuddy(other.gameObject.GetComponentInChildren<Buddy>());
         }
     }
 }

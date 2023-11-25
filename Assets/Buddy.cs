@@ -34,15 +34,15 @@ public class Buddy : MonoBehaviour
     [ContextMenu("Random Bodies")]
     void RandomBodies()
     {
-        Debug.Log("Randoming Bodying");
+        //Debug.Log("Randoming Bodying");
         rend.sprite = bodies[Random.Range(0, bodies.Length)];
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A))
+        /*if (Input.GetKeyDown(KeyCode.A))
         {
             RandomBodies();
-        }
+        }*/
     }
 }
