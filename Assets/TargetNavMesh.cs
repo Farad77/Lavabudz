@@ -19,9 +19,15 @@ public class TargetNavMesh : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (target != null)
+        if (target == null) return;
+        if (target != null&&Vector3.Distance(target.position,this.transform.position)<=3)
         {
             nav.SetDestination(target.position);
         }
+        else
+        {
+            nav.isStopped = true;
+        }
+
     }
 }
