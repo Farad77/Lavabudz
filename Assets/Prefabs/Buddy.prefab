@@ -790,6 +790,11 @@ MonoBehaviour:
   - {fileID: 21300000, guid: c208e900c6cd3ac459bae3a30049fc15, type: 3}
   - {fileID: 21300000, guid: c7fbc7e416469744ba4ba68063ff4c63, type: 3}
   rend: {fileID: 567043380137645523}
+  membres:
+  - {fileID: 5045883729127223374}
+  - {fileID: 3854596645884020055}
+  - {fileID: 6904935311662475351}
+  - {fileID: 5980043164030241666}
 --- !u!136 &5333818413598614214
 CapsuleCollider:
   m_ObjectHideFlags: 0
