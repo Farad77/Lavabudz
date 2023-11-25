@@ -10075,6 +10075,38 @@ PrefabInstance:
       propertyPath: levelGO
       value: 
       objectReference: {fileID: 5515677}
+    - target: {fileID: 2087297652948640568, guid: d1f9e7d736f9a0843a9981b660245265, type: 3}
+      propertyPath: gameOverTxt
+      value: 
+      objectReference: {fileID: 1907743589}
+    - target: {fileID: 2087297652948640568, guid: d1f9e7d736f9a0843a9981b660245265, type: 3}
+      propertyPath: gameOverCanvasGO
+      value: 
+      objectReference: {fileID: 772829749}
+    - target: {fileID: 5901337660775766159, guid: d1f9e7d736f9a0843a9981b660245265, type: 3}
+      propertyPath: m_text
+      value: Game Over !
+      objectReference: {fileID: 0}
+    - target: {fileID: 5901337660775766159, guid: d1f9e7d736f9a0843a9981b660245265, type: 3}
+      propertyPath: m_fontSize
+      value: 34.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5901337660775766159, guid: d1f9e7d736f9a0843a9981b660245265, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5901337660775766159, guid: d1f9e7d736f9a0843a9981b660245265, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 5901337660775766159, guid: d1f9e7d736f9a0843a9981b660245265, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6321166842477497666, guid: d1f9e7d736f9a0843a9981b660245265, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 9.4
+      objectReference: {fileID: 0}
     - target: {fileID: 8510763271764740267, guid: d1f9e7d736f9a0843a9981b660245265, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -10704,6 +10736,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1494393146}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &772829749 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8951986048445553463, guid: d1f9e7d736f9a0843a9981b660245265, type: 3}
+  m_PrefabInstance: {fileID: 736977399}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &774341010
 GameObject:
   m_ObjectHideFlags: 0
@@ -26712,6 +26749,17 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
+--- !u!114 &1907743589 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5901337660775766159, guid: d1f9e7d736f9a0843a9981b660245265, type: 3}
+  m_PrefabInstance: {fileID: 736977399}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1908212094
 PrefabInstance:
   m_ObjectHideFlags: 0
