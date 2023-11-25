@@ -28,12 +28,12 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void Init(float tableYPos) //init by StartManager
+    public void Init(Vector3 position) //init by StartManager
     {
         init = true;
-        levelGO.transform.position = new Vector3(levelGO.transform.position.x, tableYPos, levelGO.transform.position.z); //place TABLE
+        levelGO.transform.position = new Vector3(position.x+levelGO.transform.localScale.x/2, position.y, position.z+levelGO.transform.position.z/2); //place TABLE
         levelGO.SetActive(true); //show LEVEL
-      
+        levelGO.GetComponent<AllTheChildrenAreBelongToDie>().generationDeenfanter();
         lastingBuddies.AddRange(FindObjectsByType<Buddy>(FindObjectsSortMode.None)); //REF & COUNT BUDDIES
         UpdateBuddyCount();
     }

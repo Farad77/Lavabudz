@@ -13,11 +13,13 @@ public class PokeTest : InteractableColorVisual
     private IInteractableView a { get; set; }
     protected virtual void Awake()
     {
+        base.Awake();
         a = _a as IInteractableView;
     }
 
     protected virtual void Start()
     {
+        base.Start();
         this.BeginStart(ref _started);
 
         this.AssertField(a, nameof(a));
@@ -29,6 +31,7 @@ public class PokeTest : InteractableColorVisual
 
     protected virtual void OnEnable()
     {
+        base.OnEnable();
         if (_started)
         {
             UpdateVisual();
