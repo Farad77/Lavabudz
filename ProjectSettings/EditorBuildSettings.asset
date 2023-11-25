@@ -11,12 +11,12 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Buddy.unity
     guid: 7e52315aa057d24408adedf895fb10ed
-  - enabled: 0
-    path: Assets/Unity_MetaBalls_Liquids/MetaBalls.unity
-    guid: 550a9e29acc3df746b22f70540971d1c
   - enabled: 1
     path: Assets/Scenes/Environnement.unity
     guid: db7822dba96394442b78deffe2f38987
+  - enabled: 1
+    path: Assets/Scenes/mainTest.unity
+    guid: 5c2e13a81219f664ba5bbd70146ba6bd
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 46e78c0213b1c464b9ac3e4e65aaac8a, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 5d4e41783e8e7774cabf2a4030be694c, type: 2}
