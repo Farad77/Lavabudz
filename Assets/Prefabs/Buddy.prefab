@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1216257383139492825}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50,7 +50,7 @@ GameObject:
   - component: {fileID: 4144235228694044811}
   - component: {fileID: 7368056818890194084}
   - component: {fileID: 4415511272946421888}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: RHip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,7 +100,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: df9c4c4c988a5724e9b08410a7d1427e, type: 2}
+  - {fileID: 2100000, guid: 99e3da6b9e0f55944b9aaa23742c6fdb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -276,7 +276,7 @@ GameObject:
   - component: {fileID: 2407693251997975786}
   - component: {fileID: 107816279366395231}
   - component: {fileID: 6334042234113671512}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: LHip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -326,7 +326,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: df9c4c4c988a5724e9b08410a7d1427e, type: 2}
+  - {fileID: 2100000, guid: 99e3da6b9e0f55944b9aaa23742c6fdb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -501,7 +501,7 @@ GameObject:
   - component: {fileID: 8293753937581624469}
   - component: {fileID: 748984045994689761}
   - component: {fileID: 4213164254820184367}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: LFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -623,7 +623,7 @@ GameObject:
   - component: {fileID: 5590312706537862796}
   - component: {fileID: 4157914447118841059}
   - component: {fileID: 1241461853647893639}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Rfoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -743,8 +743,7 @@ GameObject:
   - component: {fileID: 8466014983458025436}
   - component: {fileID: 6811219213712801767}
   - component: {fileID: 5333818413598614214}
-  - component: {fileID: 7508740490292613099}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Buddy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -814,33 +813,6 @@ CapsuleCollider:
   m_Height: 0.5
   m_Direction: 1
   m_Center: {x: 0, y: 0.38, z: 0}
---- !u!54 &7508740490292613099
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7047850975182547439}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 80
-  m_CollisionDetection: 0
 --- !u!1 &7483390032897015390
 GameObject:
   m_ObjectHideFlags: 0
@@ -850,7 +822,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6245197600290084032}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BuddyTest2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -884,7 +856,7 @@ GameObject:
   - component: {fileID: 567043380137645523}
   - component: {fileID: 4107510511109012879}
   - component: {fileID: 7939676633466756111}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Renderer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
