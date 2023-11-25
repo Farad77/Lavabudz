@@ -34,6 +34,7 @@ public class MeteorExplosionBehavior : MonoBehaviour
     // normalement les gamesObjects en ref devraient etre déja initialisés
     void Start()
     {
+        LaunchMeteor();
 
     }
 
@@ -85,21 +86,23 @@ public class MeteorExplosionBehavior : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider.CompareTag("Floor"))
+        Debug.Log("On collision meteor "+collision.gameObject.name);
+        if (collision.collider.CompareTag("Floor")|| collision.collider.CompareTag("Buddy"))
         {
             DoExplode();
         }
+        Destroy(gameObject);
     }
 
 
-
+     Collider[] collidedBudds;
     [ContextMenu("DoExplode")]
     public void DoExplode()
     {
         // lancer le fx d'explosion
         // activer le detecteur de budz
         // kill les budz dans la zone
-
+        Debug.Log("explosion");
         Debug.Log("Meteor Exploding : " + gameObject.name);
         //explosionTrigger.SetActive(true);
 
@@ -112,7 +115,13 @@ public class MeteorExplosionBehavior : MonoBehaviour
         aoeDecal.SetActive(false);
         aoeDecal.transform.localScale = new Vector3(3, 3, 3);
 
-        Collider[] collidedBudds = Physics.OverlapSphere(explosionTrigger.position, explosionRadius, killableBuddz);
+        collidedBudds = Physics.OverlapSphere(explosionTrigger.position, explosionRadius, killableBuddz);
+        foreach(Collider c in collidedBudds){
+
+            GameManager.Instance.KillBuddy(c.gameObject.GetComponent<Buddy>());   
+
+        }
+        
     }
 
 
