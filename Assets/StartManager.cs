@@ -5,20 +5,24 @@ using UnityEngine;
 
 public class StartManager : MonoBehaviour
 {
+
+    public static StartManager Instance;
+
     public GameObject[] startElements;
     public GameObject tablePlacer; //use to place virtual table
 
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(LaunchGameDelay());
+        if (Instance == null)
+            Instance = this;
+        else
+            Destroy(this);
+
+        //StartCoroutine(LaunchGameDelay());
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
     IEnumerator LaunchGameDelay()
     {
 

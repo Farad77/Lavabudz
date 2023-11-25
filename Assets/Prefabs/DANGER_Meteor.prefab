@@ -10034,7 +10034,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosionTrigger: {fileID: 3394908249331749571}
-  explosionRadius: 3
+  explosionRadius: 1.4
   killableBuddz:
     serializedVersion: 2
     m_Bits: 128
@@ -14885,12 +14885,12 @@ GameObject:
   - component: {fileID: 7566371707378303320}
   - component: {fileID: 4565708145508736083}
   m_Layer: 0
-  m_Name: Meteor2
+  m_Name: DANGER_Meteor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7566371707378303320
 Transform:
   m_ObjectHideFlags: 0

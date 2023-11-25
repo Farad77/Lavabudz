@@ -25,13 +25,9 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         if (Instance == null)
-        {
             Instance = this;
-        }
         else
-        {
             Destroy(this);
-        }
     }
 
     public void Init(Vector3 position) //init by StartManager
