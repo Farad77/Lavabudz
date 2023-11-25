@@ -8,7 +8,13 @@ public class GameManager : MonoBehaviour
     public List<Buddy> lastingBuddies;
     public bool gameOver;
 
-    public static GameManager Instance; 
+    public static GameManager Instance;
+
+    public bool init; 
+
+    public GameObject levelGO;
+
+ 
 
     private void Awake()
     {
@@ -22,11 +28,20 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void Init(float tableYPos) //init by StartManager
+    {
+        init = true;
+        levelGO.transform.position = new Vector3(levelGO.transform.position.x, tableYPos, levelGO.transform.position.z); //place TABLE
+        levelGO.SetActive(true); //show LEVEL
+      
+        lastingBuddies.AddRange(FindObjectsByType<Buddy>(FindObjectsSortMode.None)); //REF & COUNT BUDDIES
+        UpdateBuddyCount();
+    }
+
 
     private void Start()
     {
-        lastingBuddies.AddRange(FindObjectsByType<Buddy>(FindObjectsSortMode.None));
-        UpdateBuddyCount();
+        levelGO.SetActive(false); //hide terrain for startManager
     }
 
 
