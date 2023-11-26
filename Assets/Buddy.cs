@@ -9,7 +9,12 @@ public class Buddy : MonoBehaviour
     public SpriteRenderer rend;
     public GameObject[] membres;
     Animator anim;
+
+    [Header("SFX")]
     public GameObject poufSFX;
+    public AudioClip[] victorySFXs;
+    public AudioClip[] deathSFXs;
+    AudioSource audioSource;
 
     private void Start()
     {
@@ -17,7 +22,10 @@ public class Buddy : MonoBehaviour
         anim = this.GetComponentInChildren<Animator>();
         anim.enabled = false;
         StartCoroutine(startAnim());
-        
+
+        audioSource = GetComponent<AudioSource>();
+
+
     }
     public void removeMembres()
     {
@@ -56,10 +64,29 @@ public class Buddy : MonoBehaviour
     IEnumerator Killing()
     {
         anim.SetTrigger("Dead");
+        PlaySound(deathSFXs[Random.Range(0, deathSFXs.Length-1)]);
         yield return new WaitForSeconds(1);
         poufSFX.SetActive(true);
         removeMembres();
         yield return new WaitForSeconds(1);
         Destroy(gameObject);
+    }
+
+    void PlaySound(AudioClip clip)
+    {
+        audioSource.clip = clip;
+        audioSource.Play();
+
+    }
+
+    public void Victory()
+    {
+        StartCoroutine(Victorying());
+    }
+
+    IEnumerator Victorying()
+    {
+        yield return new WaitForSeconds(Random.Range(0, 0.5f));
+        PlaySound(victorySFXs[Random.Range(0, victorySFXs.Length - 1)]);
     }
 }

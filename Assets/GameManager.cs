@@ -75,12 +75,11 @@ public class GameManager : MonoBehaviour
 
     public void KillBuddy(Buddy target)
     {
-        if (target != null)
-        {
-            lastingBuddies.Remove(target);
-            target.Kill();
-        }
+        if(target == null) return;
 
+        lastingBuddies.Remove(target);
+        target.Kill();
+        
 
         UpdateBuddyCount();
     }
@@ -114,6 +113,11 @@ public class GameManager : MonoBehaviour
         Debug.Log("VICTORY !!!!!!!!");
         gameOverTxt.text = "Victory !";
 
+        for (int i = 0; i < lastingBuddies.Count; i++)
+        {
+            lastingBuddies[i].Victory();
+        }
+
         // STOP METEOR SPAWNING
         foreach (MeteorSpawner mSpawner in meteorSpawners)
             mSpawner.StopSpawning();
@@ -130,7 +134,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator Reloading()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(7);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
