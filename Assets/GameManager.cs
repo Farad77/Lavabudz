@@ -6,21 +6,27 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    public int lastingBuddiesCount;
-    public List<Buddy> lastingBuddies;
-    public bool gameOver;
 
     public static GameManager Instance;
 
-    public bool init; 
+    [SerializeField] bool init;
+    public bool gameOver;
+
+
+    public int lastingBuddiesCount;
+    public List<Buddy> lastingBuddies;
+
+    public MeteorSpawner[] meteorSpawners;
+
+
+
 
     public GameObject levelGO;
 
     public GameObject gameOverCanvasGO;
-
     public TextMeshProUGUI gameOverTxt;
 
- 
+
 
     private void Awake()
     {
@@ -32,23 +38,36 @@ public class GameManager : MonoBehaviour
 
     public void Init(Vector3 position) //init by StartManager
     {
+
+
         init = true;
+
+
+        Debug.Log("INIT GAME MANAGER");
+
 
         if (levelGO)
         {
+            // DEPLACAGE DU TERRAIN
             levelGO.transform.position = new Vector3(position.x + levelGO.transform.localScale.x / 2, position.y, position.z + levelGO.transform.position.z / 2); //place TABLE
             levelGO.SetActive(true); //show LEVEL
             levelGO.GetComponent<AllTheChildrenAreBelongToDie>().generationDeenfanter();
         }
-       
+
         lastingBuddies.AddRange(FindObjectsByType<Buddy>(FindObjectsSortMode.None)); //REF & COUNT BUDDIES
         UpdateBuddyCount();
+
+
+        // HANDLE METEOR HERE
+        foreach (MeteorSpawner mSpawner in meteorSpawners)
+            mSpawner.StartSpawning();
+
     }
 
 
     private void Start()
     {
-        if (levelGO)  levelGO.SetActive(false); //hide terrain for startManager
+        if (levelGO) levelGO.SetActive(false); //hide terrain for startManager
 
         gameOverCanvasGO.SetActive(false);
     }
@@ -56,9 +75,12 @@ public class GameManager : MonoBehaviour
 
     public void KillBuddy(Buddy target)
     {
-        lastingBuddies.Remove(target);
-        target.Kill();
-        
+        if (target != null)
+        {
+            lastingBuddies.Remove(target);
+            target.Kill();
+        }
+
 
         UpdateBuddyCount();
     }
@@ -67,7 +89,7 @@ public class GameManager : MonoBehaviour
     {
         lastingBuddiesCount = lastingBuddies.Count;
 
-        if(lastingBuddiesCount <= 0)
+        if (init && lastingBuddiesCount <= 0)
         {
             GameOver();
         }
@@ -75,19 +97,29 @@ public class GameManager : MonoBehaviour
 
     void GameOver()
     {
-        Debug.Log("Game is over");
+        Debug.Log("GAME OVER !!!!!!!!");
         gameOver = true;
         gameOverTxt.text = "Game Over !";
+
+        // STOP METEOR SPAWNING
+        foreach (MeteorSpawner mSpawner in meteorSpawners)
+            mSpawner.StopSpawning();
+
         Reload();
 
     }
 
     public void Win()
     {
+        Debug.Log("VICTORY !!!!!!!!");
         gameOverTxt.text = "Victory !";
+
+        // STOP METEOR SPAWNING
+        foreach (MeteorSpawner mSpawner in meteorSpawners)
+            mSpawner.StopSpawning();
+
         Reload();
-        //win
-        Debug.Log("Victory !");
+
     }
 
     void Reload()
@@ -105,7 +137,7 @@ public class GameManager : MonoBehaviour
     [ContextMenu("Kill all")]
     public void KillAllBuddies()
     {
-       // lastingBuddies.AddRange(FindObjectsByType<Buddy>(FindObjectsSortMode.None)); //REF & COUNT BUDDIES
+        // lastingBuddies.AddRange(FindObjectsByType<Buddy>(FindObjectsSortMode.None)); //REF & COUNT BUDDIES
 
         for (int i = 0; i < lastingBuddies.Count; i++)
         {

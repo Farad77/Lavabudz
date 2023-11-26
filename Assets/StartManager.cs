@@ -11,6 +11,9 @@ public class StartManager : MonoBehaviour
     public GameObject[] startElements;
     public GameObject tablePlacer; //use to place virtual table
 
+
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +37,8 @@ public class StartManager : MonoBehaviour
     [ContextMenu("Launch Game")]
     public void LaunchGame() //by pressing start Button
     {
+        Debug.Log("LAUNCH GAME");
+
         HideStartElements();
         GameManager.Instance.Init(tablePlacer.transform.position);
     }
