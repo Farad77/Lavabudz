@@ -10,7 +10,7 @@ public class FinalGoal : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Goal detected stuff");
+        //Debug.Log("Goal detected stuff");
         if (other.GetComponent<Buddy>() != null)
         {
             Debug.Log("Goal detected buddy ");

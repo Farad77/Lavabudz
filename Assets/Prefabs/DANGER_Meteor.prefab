@@ -9869,7 +9869,7 @@ Transform:
   m_GameObject: {fileID: 2206923173481937336}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 2, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9896,8 +9896,8 @@ MonoBehaviour:
   m_UVBias: {x: 0, y: 0}
   m_DecalLayerMask: 4294967295
   m_ScaleMode: 1
-  m_Offset: {x: 0, y: 0, z: 2}
-  m_Size: {x: 1, y: 1, z: 5}
+  m_Offset: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1, z: 10}
   m_FadeFactor: 1
 --- !u!1 &2401446266672671907
 GameObject:
@@ -9984,7 +9984,7 @@ Transform:
   m_GameObject: {fileID: 2445758594057933404}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 30, z: 0}
+  m_LocalPosition: {x: 0, y: 20, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -10003,7 +10003,7 @@ Rigidbody:
   m_GameObject: {fileID: 2445758594057933404}
   serializedVersion: 4
   m_Mass: 100
-  m_Drag: 0
+  m_Drag: 1
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
@@ -10033,8 +10033,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57b4f6c750d7f54479cdaae541d70270, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  noKillExplosion: 0
+  baseParentPosition: {x: 0, y: 0, z: 0}
+  rndParentPositionOffset: 2
+  baseHeight: 20
+  rndHeightOffset: 5
+  safeTicLoopDelay: 10
+  delayBeforKill: 0.7
   explosionTrigger: {fileID: 3394908249331749571}
-  explosionRadius: 3
+  explosionRadius: 1.4
   killableBuddz:
     serializedVersion: 2
     m_Bits: 128
@@ -10044,6 +10051,10 @@ MonoBehaviour:
   aoeDecal: {fileID: 7666816358502112930}
   meteorAnim: {fileID: 4565708145508736083}
   meteorRb: {fileID: 2198822820071886194}
+  contactableLayers:
+    serializedVersion: 2
+    m_Bits: 384
+  distMax: 100
 --- !u!1 &3826657614092587534
 GameObject:
   m_ObjectHideFlags: 0
@@ -14885,12 +14896,12 @@ GameObject:
   - component: {fileID: 7566371707378303320}
   - component: {fileID: 4565708145508736083}
   m_Layer: 0
-  m_Name: Meteor2
+  m_Name: DANGER_Meteor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7566371707378303320
 Transform:
   m_ObjectHideFlags: 0
@@ -14984,8 +14995,8 @@ MonoBehaviour:
   m_UVBias: {x: 0, y: 0}
   m_DecalLayerMask: 4294967295
   m_ScaleMode: 1
-  m_Offset: {x: 0, y: 0, z: 2}
-  m_Size: {x: 1, y: 1, z: 5}
+  m_Offset: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1, z: 10}
   m_FadeFactor: 0.5
 --- !u!1 &4818860443718248693
 GameObject:
@@ -20181,7 +20192,7 @@ Transform:
   m_GameObject: {fileID: 7666816358502112930}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 2, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -20208,8 +20219,8 @@ MonoBehaviour:
   m_UVBias: {x: 0, y: 0}
   m_DecalLayerMask: 4294967295
   m_ScaleMode: 1
-  m_Offset: {x: 0, y: 0, z: 2}
-  m_Size: {x: 1, y: 1, z: 5}
+  m_Offset: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1, z: 10}
   m_FadeFactor: 1
 --- !u!1 &8035231987865934540
 GameObject:
