@@ -52,8 +52,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   infiniteLoop: 1
   isSpawning: 0
-  delay: 4
-  rndDelay: 2
+  delay: 2
+  rndDelay: 1
   meteorsAspawn:
   - {fileID: 5562085319529817934}
   - {fileID: 1911412212995014956}
