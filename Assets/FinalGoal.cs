@@ -35,4 +35,8 @@ public class FinalGoal : MonoBehaviour
             GameManager.Instance.Win();
         }
     }
+    private void Update()
+    {
+        UpdateBuddyCount();
+    }
 }

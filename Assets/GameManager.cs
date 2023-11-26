@@ -75,12 +75,11 @@ public class GameManager : MonoBehaviour
 
     public void KillBuddy(Buddy target)
     {
-        if (target != null)
-        {
-            lastingBuddies.Remove(target);
-            target.Kill();
-        }
+        if(target == null) return;
 
+        lastingBuddies.Remove(target);
+        target.Kill();
+        
 
         UpdateBuddyCount();
     }

@@ -21,7 +21,7 @@ public class Lava : MonoBehaviour
         //Debug.Log("Lava detected smth");
         if(other.gameObject.GetComponentInChildren<Buddy>() != null)
         {
-            Debug.Log("Lava detected buddy, Kill Buddy");
+           // Debug.Log("Lava detected buddy, Kill Buddy");
             GameManager.Instance.KillBuddy(other.gameObject.GetComponentInChildren<Buddy>());
         }
     }
