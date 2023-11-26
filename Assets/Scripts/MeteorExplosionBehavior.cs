@@ -40,6 +40,7 @@ public class MeteorExplosionBehavior : MonoBehaviour
     [SerializeField] Rigidbody meteorRb;
 
 
+    AudioSource audioSource;
 
 
     // Start is called before the first frame update
@@ -50,6 +51,8 @@ public class MeteorExplosionBehavior : MonoBehaviour
         baseParentPosition = transform.parent.localPosition;
         //LaunchMeteor();
         //InitMeteor();
+
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -247,6 +250,8 @@ public class MeteorExplosionBehavior : MonoBehaviour
         GameObject impact = Instantiate(impactDecal, impactDecal.transform.position, impactDecal.transform.rotation, null);
         impact.SetActive(true);
 
+
+        audioSource.Play(); //play SFX
 
         aoeDecalBG.SetActive(false);
         aoeDecal.SetActive(false);
