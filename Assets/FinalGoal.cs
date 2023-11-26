@@ -28,7 +28,8 @@ public class FinalGoal : MonoBehaviour
     {
         insideBuddyCount = insideBuddies.Count;
 
-        if (insideBuddies.Count == GameManager.Instance.lastingBuddiesCount)
+        if (GameManager.Instance.lastingBuddiesCount!=0&& insideBuddies.Count!=0&&
+            insideBuddies.Count == GameManager.Instance.lastingBuddiesCount)
         {
             //Win
             victory = true;
