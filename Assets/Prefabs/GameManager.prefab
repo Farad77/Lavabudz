@@ -188,6 +188,10 @@ MonoBehaviour:
   levelGO: {fileID: 0}
   gameOverCanvasGO: {fileID: 8951986048445553463}
   gameOverTxt: {fileID: 5901337660775766159}
+  musics:
+  - {fileID: 8300000, guid: cd280a9228a000e408e9335b8cffe872, type: 3}
+  - {fileID: 8300000, guid: 1ff07a93e734f654ebf6d724213511a8, type: 3}
+  musicSource: {fileID: 0}
 --- !u!1 &8951986048445553463
 GameObject:
   m_ObjectHideFlags: 0

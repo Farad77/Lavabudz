@@ -26,6 +26,8 @@ public class GameManager : MonoBehaviour
     public GameObject gameOverCanvasGO;
     public TextMeshProUGUI gameOverTxt;
 
+    public AudioClip[] musics;
+    public AudioSource musicSource;
 
 
     private void Awake()
@@ -34,6 +36,9 @@ public class GameManager : MonoBehaviour
             Instance = this;
         else
             Destroy(this);
+
+        musicSource.clip = musics[0];
+        musicSource.Play();
     }
 
     public void Init(Vector3 position) //init by StartManager
@@ -61,6 +66,9 @@ public class GameManager : MonoBehaviour
         // HANDLE METEOR HERE
         foreach (MeteorSpawner mSpawner in meteorSpawners)
             mSpawner.StartSpawning();
+
+        musicSource.clip = musics[1];
+        musicSource.Play();
 
     }
 
